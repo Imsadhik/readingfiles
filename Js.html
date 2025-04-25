@@ -1,0 +1,159 @@
+// call
+// Ans: The call() method in JavaScript is used to invoke a function with a specific this value and arguments passed individually.
+
+let obj1 = {
+    name: "shafi"
+}
+
+function hello(){
+    console.log("Hello" +", "+ this.name);
+}
+
+hello.call(obj1)
+
+// bind
+// The bind() method in JavaScript is used to create a new function with a specific this value and predefined arguments.
+
+const person = {
+    name: "shafi",
+    
+}
+
+function greet(){
+    console.log("Hello, "+ this.name);  
+}
+
+const greet1 = greet.bind(person)
+greet1()
+
+// Server-Side Rendering (SSR):
+// The server generates the complete HTML for the page and sends it to the browser.
+// The user sees the content immediately when the page loads.
+
+// csr
+// The browser loads a basic HTML file from the server.
+// A JavaScript file (like React or Angular) runs in the browser.
+// JavaScript creates and updates the content on the page.
+// The page is built and shown directly in the browser without needing to reload.
+
+// The <!DOCTYPE> declaration ensures that the browser renders the page in standards mode rather than quirks mode.
+
+// Standards mode: Browser follows modern HTML and CSS specifications.
+// Quirks mode: Browser mimics the behavior of older browsers (used for backward compatibility).
+
+// 1. What are arrow functions?
+// Arrow functions were introduced in the ES6 version of javascript. They provide us with a new and shorter syntax for declaring functions. 
+// Arrow functions can only be used as a function expression. Arrow functions are declared without the function keyword. If there is only 
+// one returning expression then we don’t need to use the return keyword. curly braces { } can be omitted.
+
+
+// Prototype Design Pattern?
+// The Prototype Design Pattern allows you to create objects based on a template object (prototype) rather than creating them from scratch.
+
+const carPrototype = {
+    start() {
+      console.log(`${this.make} ${this.model} is starting...`);
+    },
+    stop() {
+      console.log(`${this.make} ${this.model} is stopping...`);
+    }
+  };
+
+  const car1 = Object.create(carPrototype);
+car1.make = 'Toyota';
+car1.model = 'Camry';
+
+car1.start(); // Output: Toyota Camry is starting...
+car1.stop(); // Output: Toyota Camry is stopping...
+
+
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+12. Explain Higher Order Functions in javascript.
+Ans. Function takes another function as an argument.
+
+Example 1:
+function higherOrderFn(){
+    return function(){
+        return "Doing Something"
+    }
+}
+
+var x = higherOrderFn();
+x(); // Output: Doing Something
+
+Example 2:
+function higherOrder(fn) {
+    fn();
+  }
+higherOrder(function() { 
+    console.log("Hello world") 
+}); 
+
+14. Explain “this” keyword.
+Ans: "this" keyword refers to current class object.
+
+Example:
+let obj = {
+    name: "shafi",
+    getName: function(){
+        console.log(this.name)
+    }
+}
+obj.getName()
+
+13. Explain Callback Functions in javascript.
+
+14. Refrential equality in react js?
+when page rerenders then functions will get recreated.
+
+15. what is event bubbling?
+Event bubbling is a type of event propagation where the event starts from the target element and bubbles up to the root.
+
+<div class="outer">
+    <div class="inner">
+        <button class="button">click</button>
+    </div>
+</div>
+
+<!-- output -->
+<!-- 1) button
+2) inner
+3) outer -->
+
+16. what is event capturing?
+Event capturing is a type of event propagation where the event starts from the root element and travels down to the target element.
+
+we need to pass true in case of event capturing.
+
+<div class="outer">
+    <div class="inner">
+        <button class="button">click</button>
+    </div>
+</div>
+<!-- output -->
+<!-- 1) outer
+2) inner
+3) button -->
+
+17. what is event delegation?
+the combination of event bubbling and event target.
+
+I've had a great experience at my current company, where I've grown both technically and professionally over the past 2.3 years.
+ I've worked on several meaningful projects, improved my skills in [mention specific technologies, e.g., MERN stack], and 
+ collaborated with a talented team. However, I now feel ready to take on new challenges that can help me expand my skill set 
+ further, work on more complex or large-scale applications, and contribute to a dynamic environment where I can continue to 
+ grow and add more value. I'm particularly excited about opportunities that allow me to work on innovative projects and keep 
+ learning new technologies.
+
+
+ Based on my experience, skills in mern-stack development, and the current market standards, I was expecting something
+  around ₹10lakhs to ₹12 LPA. 
+
+
+  Scale-Out in MongoDB (Horizontal Scaling)
+Scale-out in MongoDB is achieved using a feature called Sharding.
+
+🔹 What is Sharding?
+Sharding is the process of distributing data across multiple servers (called shards) to handle large datasets and high throughput.
