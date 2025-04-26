@@ -317,3 +317,153 @@ What is hoisting?
 <----------------------------------------------------- QUESTION 14 --------------------------------------------------------------->
 
 Difference between debounce and trottle?
+
+<!-- 
+Debounce ensures that a function is only executed once after a specific delay has passed since the last time it was called.
+
+Use Case:
+Used when you want to wait until the user stops triggering the event, like:
+Search input field (wait until the user finishes typing)
+Auto-save after user stops typing
+
+function debounce(func, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+} 
+-->
+
+<!-- clearTimeout(debounceState)
+const inDebounce = setTimeout(()=>{
+  //logic
+},1000)
+setDebounceState(inDebounce) -->
+
+
+<!-- Throttle ensures that a function is executed at regular intervals no matter how many times the event is triggered.
+
+Use Case:
+Used when you want to limit how often a function runs, like:
+
+Scroll event handler
+Window resize listener
+Button click spamming prevention
+
+function throttle(func, limit) {
+  let inThrottle;
+  return function (...args) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
+} -->
+
+
+<----------------------------------------------------- QUESTION 15 --------------------------------------------------------------->
+
+explain this keyword in js?
+<!-- this refers to the context in which a function is executed. its value depends on how the function is called.
+const obj ={
+  name: "shafi",
+  greet(){
+    console.log("my name is ${this.name}")
+  }
+}
+
+obj.greet() -->
+
+<----------------------------------------------------- QUESTION 16 --------------------------------------------------------------->
+
+what are js prototypes?
+<!-- prototypes allow objects to inherit properties and methods from other objects.
+
+function Person(name){
+  this.name = name
+}
+
+Person.prototype.greet = function(){
+  return `Hello ${this.name}`
+}
+
+const person = new Person('shafi')
+console.log(person.greet()) -->
+
+<----------------------------------------------------- QUESTION 17 --------------------------------------------------------------->
+
+how can you prevent a function from being called multiple times?
+<!-- you can use debounce. -->
+
+<----------------------------------------------------- QUESTION 18 --------------------------------------------------------------->
+
+What is event loop in js?
+<!-- the event loop processes tasks from the stack and queue for asynchronous operations. -->
+
+<!-- console.log("start")
+setTimeout(()=>console.log("Timeout"),0)
+console.log("end)
+
+console.log("start") runs immediately.
+
+setTimeout(..., 0) doesn’t execute instantly — it's pushed to the callback queue after 0 ms but only runs after the current call stack is clear.
+
+console.log("end") runs next. -->
+
+<!-- o/p:-start
+end
+timeout -->
+
+
+<----------------------------------------------------- QUESTION 19 --------------------------------------------------------------->
+
+Difference between filter and find?
+<!-- Returns a new array with all elements that pass a test (return true in the callback).
+
+array.filter((element, index, array) => {
+  return condition;
+});
+
+const numbers = [1, 2, 3, 4, 5];
+const even = numbers.filter(num => num % 2 === 0);
+console.log(even); // [2, 4]
+
+Returns the first element that passes the test.
+
+array.find((element, index, array) => {
+  return condition;
+});
+
+const numbers = [1, 2, 3, 4, 5];
+const firstEven = numbers.find(num => num % 2 === 0);
+console.log(firstEven); // 2 -->
+
+<----------------------------------------------------- QUESTION 20 --------------------------------------------------------------->
+
+Difference between reduce and flat?
+<!-- 
+Used to accumulate array values into a single value (which can be a number, array, object, etc.).
+
+array.reduce((accumulator, currentValue) => {
+  return updatedAccumulator;
+}, initialValue);
+
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((total, num) => total + num, 0);
+console.log(sum); // 10
+
+
+Used to flatten nested arrays — it removes one or more levels of nesting.
+
+array.flat(depth);  
+
+const nested = [1, [2, 3], [4, [5, 6]]];
+console.log(nested.flat());    // [1, 2, 3, 4, [5, 6]]
+console.log(nested.flat(2));   // [1, 2, 3, 4, 5, 6] 
+-->
+
+<----------------------------------------------------- QUESTION 21 --------------------------------------------------------------->
