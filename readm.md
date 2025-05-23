@@ -467,3 +467,200 @@ console.log(nested.flat(2));   // [1, 2, 3, 4, 5, 6]
 -->
 
 <----------------------------------------------------- QUESTION 21 --------------------------------------------------------------->
+
+difference between npx and npm
+<!-- npm -
+Used to install, manage, and run packages (libraries/tools) from the npm registry.  
+npx - 
+Used to run packages without installing them globally. -->
+
+<----------------------------------------------------- QUESTION 22 --------------------------------------------------------------->
+
+difference between apply() and call()?
+
+<!-- call(): invokes a function with a specific this value and arguments passed individually. 
+apply(): similar to call(), but arguments are passed as an array.
+
+function greet(greeting,punctuation){
+  return `${greeting}, ${this.name} ${punctuation}`
+}
+
+const person = { name:'siva' }
+
+console.log(greet.call(person,"Hello","!") ) Hello siva!
+console.log(greet.apply(person,["Hello","!"])) -->
+
+What is bind() method used for?
+<!-- The bind() method creates a new function with a specific this value and optional arguments. -->
+
+<!-- function greet(greeting){
+  return `${greeting}, ${this.name}`
+}
+
+const person = { name:'siva' }
+
+const hello = greet.bind(person)
+
+console.log(hello("Hai")) -->
+
+<----------------------------------------------------- QUESTION 22 --------------------------------------------------------------->
+
+Explain the concept of "event bubbling" and "event capturing".
+
+<!-- Event Bubbling: Events propagate from the target element
+to the parent elements.
+Event Capturing: Events propagate from the parent
+elements to the target element. -->
+<!-- 
+document.getElementById("child").addEventListener("click",()=>
+  console.log("Child"),true) //capturing
+
+document.getElementById("parent").addEventListener("click",()=>
+  console.log("Parent")) //bubbling -->
+
+<----------------------------------------------------- QUESTION 22 --------------------------------------------------------------->
+
+what is difference b/w deep and shallow copy?
+
+<!-- Shallow Copy: Copies only the first layer of an object.
+Deep Copy: Copies all layers of an object
+
+let obj = {a:1,b:{c:2}};
+let shallow = {...obj};
+let deep = JSON.parse(JSON.stringify(obj)) -->
+
+<----------------------------------------------------- QUESTION 22 --------------------------------------------------------------->
+
+What are generator functions?
+
+<!-- Generators are special functions that can pause execution and resume later.
+
+Generators can be used to implement state machines, where the yield keyword represents a state transition. This can be useful for managing complex control flows.
+
+function* generator(){
+  yeild 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = generator()
+console.log(gen.next().value) //1
+console.log(gen.next().value) //2
+
+function* stateMachine() {
+  let state = 'A';
+
+  while (true) {
+    switch (state) {
+      case 'A':
+        console.log('State A');
+        state = yield;
+        break;
+      case 'B':
+        console.log('State B');
+        state = yield;
+        break;
+      case 'C':
+        console.log('State C');
+        state = yield;
+        break;
+      default:
+        console.log('Invalid State');
+        state = yield;
+    }
+  }
+}
+
+const sm = stateMachine();
+sm.next(); // Start in state A
+sm.next('B'); // Transition to state B
+sm.next('C'); // Transition to state C
+sm.next('A'); // Transition to state A
+sm.next('D'); // Transition to Invalid State -->
+
+<----------------------------------------------------- QUESTION 24 --------------------------------------------------------------->
+
+What is the new keyword used for?
+<!-- The new keyword creates an instance of an object from a
+constructor function. -->
+
+<!-- function Person(name){
+  this.name = name;
+}
+
+const person = new Person("Siva")
+  console.log(person.name) -->
+
+<----------------------------------------------------- QUESTION 25 --------------------------------------------------------------->
+
+what is difference between setTimeout and setInterval?
+<!-- setTimeout: Executes a function after a specified delay.
+setInterval: Repeats execution at specified intervals.
+
+setTimeout(()=>console.log("Timeout"),1000)
+setInterval(()=>console.log("Interval"),2000) -->
+
+<----------------------------------------------------- QUESTION 26 --------------------------------------------------------------->
+
+what is weakmap and how it is different from map?
+<!-- WeakMap: Keys are only objects and are garbage collected.
+Map: Keys can be any type
+
+let obj = { key: "value"};
+let weakMap = new WeakMap();
+weakMap.set(obj,"data")   -->
+
+<----------------------------------------------------- QUESTION 27 --------------------------------------------------------------->
+
+What is a Set in js?
+<!-- A set is a collection of unique values
+
+const set = new Set([1,2,3,4,3,4])
+console.log(set) -->
+
+<----------------------------------------------------- QUESTION 28 --------------------------------------------------------------->
+
+what is Object.create() used for?
+<!-- it creates a new object with a specified prototype.
+
+const proto = { greet: ()=>"Hello" }
+const obj = Object.create(proto)
+console.log(obj.greet()) -->
+
+<----------------------------------------------------- QUESTION 29 --------------------------------------------------------------->
+
+How does JavaScript’s garbage collection work?
+<!-- JavaScript uses a mark-and-sweep algorithm to identify and remove unused objects.
+
+function createObject(){
+  const obj = { name: "Siva" }
+  console.log(obj.name)
+}
+
+createObject() //after execution obj is no longer accessible, so it is garbage collected. -->
+
+<----------------------------------------------------- QUESTION 30 --------------------------------------------------------------->
+
+What are "decorators" in JavaScript?
+<!-- Decorators are functions that modify classes or methods.
+They are experimental features.
+
+function decorator(target){
+  target.isDecorated = true;
+}
+
+@decorator
+
+class Example{}
+console.log(Example.isDecorated); -->
+
+<----------------------------------------------------- QUESTION 31 --------------------------------------------------------------->
+
+Explain the difference between prototype and
+__proto__.
+
+<!-- prototype: An object associated with functions for inheritance.
+__proto__: A reference to the object's prototype. -->
+
+<----------------------------------------------------- QUESTION 32 --------------------------------------------------------------->
+

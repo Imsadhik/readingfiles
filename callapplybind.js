@@ -157,3 +157,53 @@ const evenOrOdd=(num)=>{
 }
 
 // console.log(evenOrOdd(0))
+
+const freqOfArr = (arr) => {
+    const count = {};
+    for (let i = 0; i < arr.length; i++) {
+      count[arr[i]] = (count[arr[i]] || 0) + 1;
+    }
+    return count;
+  };
+  
+  console.log(freqOfArr([1, 2, 3, 4, 5, 6, 4, 5]));
+
+
+  const isBalanced=(str)=>{
+    const res = {
+        "{":"}",
+        "[":"]",
+        "(":")"
+    };
+    let arr = [];
+    for(let i=0;i<str.length;i++){
+        if(res[str[i]]){
+            arr.push(res[str[i]])
+        }else if(str[i] == "}" || str[i] == ")" || str[i] == "]"){
+            if(arr.pop() !== str[i]){
+                return false
+            }
+        }
+    }
+    return arr.length == 0;
+}
+
+// console.log(isBalanced("[{()}]"))
+
+const freqByValue=(arr)=>{
+    const freq = {}
+    
+    for(let num of arr){
+        freq[num] = (freq[num] || 0) + 1;
+    }
+    return arr.sort((a,b)=>{
+        if(freq[b] == freq[a]){
+            return a-b
+        }
+        return freq[b]-freq[a]
+    })
+
+}
+
+
+// console.log(freqByValue([1,2,3,4,3,2]))
