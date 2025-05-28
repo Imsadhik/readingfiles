@@ -50,7 +50,7 @@ function secondLargest(arr){
       if(arr[i]>first){
           second = first;
           first = arr[i];
-      }else if(arr[i] > second && arr[i] !== first){
+      }else{ // if(arr[i] > second && arr[i] !== first)
           second = arr[i]
       }
   }
@@ -196,7 +196,7 @@ const freqByValue=(arr)=>{
     for(let num of arr){
         freq[num] = (freq[num] || 0) + 1;
     }
-    return arr.sort((a,b)=>{
+    return [...arr].sort((a,b)=>{
         if(freq[b] == freq[a]){
             return a-b
         }
