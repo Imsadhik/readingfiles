@@ -61,3 +61,34 @@ chmod 600 keyname.pem
 
 Application loadbalancer?
 it will create target groups of several instances and 
+
+
+how vpc works and explanation?
+vpc has ip address range.
+first when user hits on website using the internet gateway and pass through public subnet and elastic load balancer will send requests to different application based on the traffic using the route table.
+
+what is public subnet?
+public subnet is the subnet that is connected to internet gateway and it is used for public ip address.
+or
+public subnet is one that is access outside the vpc(virtual private cloud).
+
+what is load balancer?
+load balancer is one that forwards requests based on the load.  
+
+how to define vpc size?
+vpc size is defined by cidr block.
+
+vpc has ip address range.
+
+what is the fullform of nacl?
+Network access control list.
+
+Network ACLs (NACLs) are stateless.
+
+Stateless means that NACLs do not keep track of request/response pairs.
+If you allow incoming traffic on a certain port, you must also explicitly allow the outgoing response traffic for that port — and vice versa.
+
+NACLs are stateless, while Security Groups are stateful.
+
+where we use security groups and nacls?
+we use security group at ec2 instance level. we use nacl at subnet level.
